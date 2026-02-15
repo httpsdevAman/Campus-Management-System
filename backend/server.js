@@ -33,23 +33,12 @@ dotenv.config();
 const app = express();
 
 // CORS - allow frontend origins (Vercel + local dev)
-const allowedOrigins = [
-    "http://localhost:5173",
-    "http://localhost:5000",
-    process.env.FRONTEND_URL,
-].filter(Boolean);
-app.use(
-    cors({
-        origin: (origin, cb) => {
-            if (!origin || allowedOrigins.includes(origin) || /\.vercel\.app$/.test(origin)) {
-                cb(null, true);
-            } else {
-                cb(null, false);
-            }
-        },
-        credentials: true,
-    })
-);
+ 
+app.use(cors({
+    origin: true,
+    credentials: true
+}));
+
 
 // Middleware 
 const PORT = process.env.PORT || 5000;

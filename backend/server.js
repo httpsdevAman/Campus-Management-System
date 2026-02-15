@@ -16,7 +16,7 @@ import assignmentRoutes from "./routes/assignment.route.js";
 import submissionRoutes from "./routes/submission.route.js";
 import calendarRoutes from "./routes/calendar.route.js"
 import opportunityRoutes from "./routes/opportunity.route.js"
-import userRoutes from "./routes/user.route.js" 
+import userRoutes from "./routes/user.route.js"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -25,9 +25,9 @@ dotenv.config();
 
 // Ensure upload directories exist (multer does not create them)
 ["uploads", "uploads/resources", "uploads/assignments", "uploads/submissions"].forEach((dir) => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
 });
 
 const app = express();
@@ -47,18 +47,14 @@ app.use(
                 cb(null, false);
             }
         },
-    credentials: true,
-  })
+        credentials: true,
+    })
 );
 
 // Middleware 
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cookieParser());
-
-app.get("/", (req, res) => {
-    res.send("API is running...");
-}); 
 
 // Routes 
 app.use('/api/auth', authRoutes)
@@ -73,18 +69,16 @@ app.use('/api/calendar', calendarRoutes)
 app.use('/api/opportunities', opportunityRoutes)
 app.use('/api/users', userRoutes)
 
-if (1) {
 
-    const frontendPath = path.join(__dirname, "../frontend/dist");
+const frontendPath = path.join(__dirname, "../frontend/dist");
 
-    app.use(express.static(frontendPath));
+app.use(express.static(frontendPath));
 
-    app.use((req, res) => {
-        res.sendFile(path.join(frontendPath, "index.html"));
-    });
-}
+app.use((req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+});
 
-        
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     // Connect to Database

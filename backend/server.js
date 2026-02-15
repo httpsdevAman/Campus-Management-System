@@ -18,7 +18,8 @@ import calendarRoutes from "./routes/calendar.route.js"
 import opportunityRoutes from "./routes/opportunity.route.js"
 import userRoutes from "./routes/user.route.js" 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve();
+const __dirname = path.dirname(__filename);
+
 
 dotenv.config();
 
@@ -78,11 +79,11 @@ if (process.env.NODE_ENV === "production") {
 
     app.use(express.static(frontendPath));
 
-    // catch-all handler
     app.use((req, res) => {
         res.sendFile(path.join(frontendPath, "index.html"));
     });
 }
+
         
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

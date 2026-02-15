@@ -73,7 +73,7 @@ app.use('/api/calendar', calendarRoutes)
 app.use('/api/opportunities', opportunityRoutes)
 app.use('/api/users', userRoutes)
 
-if (process.env.NODE_ENV === "production") {
+if (1) {
 
     const frontendPath = path.join(__dirname, "../frontend/dist");
 

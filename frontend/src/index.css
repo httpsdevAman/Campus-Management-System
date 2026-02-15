@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.04); }
+  66% { transform: translate(-20px, 15px) scale(0.96); }
+}
+
+.animate-blob-slow {
+  animation: blob-drift 20s ease-in-out infinite;
+}
+
+.animate-blob-slow-reverse {
+  animation: blob-drift 25s ease-in-out infinite reverse;
+}

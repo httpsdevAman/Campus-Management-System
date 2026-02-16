@@ -619,21 +619,22 @@ Stores users registered
 Other databases are stored in a similar way.
 
 ### How to Login or Register
-Note that only the members of the institute can Register of Login
-Below are some registered Users which can login
+Note that only the members of the institute can Register or Login.  
 
-Role: Student
-Email: aarav.mehta@iitmandi.ac.in
+Below are some registered Users which can login:
+
+- Role: Student  
+Email: aarav.mehta@iitmandi.ac.in  
 Passowrd: 456
 
-Role: Faculty 
-Email: vikram.singh@iitmandi.ac.in
+- Role: Faculty   
+Email: vikram.singh@iitmandi.ac.in  
 Passowrd: vikram
 
-Role: Authority 
-Email: priya.nair@iitmandi.ac.in
+- Role: Authority   
+Email: priya.nair@iitmandi.ac.in  
 Passowrd: priya
 
-Role: Admin
-Email: rohan.mehta@iitmandi.ac.in
+- Role: Admin  
+Email: rohan.mehta@iitmandi.ac.in  
 Passowrd: 12345

@@ -1,0 +1,10 @@
+// routes/chatbot.route.js
+
+import express from "express";
+import { chatWithGemini } from "../controllers/chatbot.controller.js";
+
+const router = express.Router();
+
+router.post("/chat", chatWithGemini);
+
+export default router;

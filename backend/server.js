@@ -17,6 +17,7 @@ import submissionRoutes from "./routes/submission.route.js";
 import calendarRoutes from "./routes/calendar.route.js"
 import opportunityRoutes from "./routes/opportunity.route.js"
 import userRoutes from "./routes/user.route.js"
+import chatbotRoutes from "./routes/chatbot.route.js"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -57,6 +58,7 @@ app.use('/api/submit', submissionRoutes)
 app.use('/api/calendar', calendarRoutes)
 app.use('/api/opportunities', opportunityRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/chatbot', chatbotRoutes)
 
 
 const frontendPath = path.join(__dirname, "../frontend/dist");

@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export const chatWithGemini = async (req, res) => {
     try {
         const { message } = req.body;
